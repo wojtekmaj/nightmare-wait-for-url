@@ -33,6 +33,11 @@
     "mocha": "^2.3.0",
     "serve-static": "^1.10.0"
   },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "nightmare-wait-for-url.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wojtekmaj/nightmare-wait-for-url"
