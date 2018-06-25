@@ -1,5 +1,6 @@
 
-![downloads](https://img.shields.io/npm/dt/nightmare-wait-for-url.svg)
+![downloads](https://img.shields.io/npm/dt/nightmare-wait-for-url.svg) ![build](https://img.shields.io/travis/wojtekmaj/nightmare-wait-for-url/master.svg) ![dependencies](https://img.shields.io/david/wojtekmaj/nightmare-wait-for-url.svg
+) ![dev dependencies](https://img.shields.io/david/dev/wojtekmaj/nightmare-wait-for-url.svg) [![tested with jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 # nightmare-wait-for-url
 
