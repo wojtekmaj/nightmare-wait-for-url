@@ -4,9 +4,9 @@
   "description": "Extends Nightmare with .waitForUrl() action.",
   "main": "src/nightmare-wait-for-url.js",
   "scripts": {
-    "test": "npm run test-eslint && npm run test-mocha",
+    "test": "npm run test-eslint && npm run test-jest",
     "test-eslint": "eslint ./src",
-    "test-mocha": "mocha test"
+    "test-jest": "jest"
   },
   "keywords": [
     "nightmare",
@@ -28,14 +28,13 @@
     "nightmare": "^2.3.0 || ^3.0.0"
   },
   "devDependencies": {
-    "chai": "^3.4.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
+    "chai": "^4.1.2",
     "eslint": "^4.16.0",
-    "express": "^4.13.3",
-    "mocha-generators": "^1.2.0",
-    "mocha": "^2.3.0",
-    "serve-static": "^1.10.0"
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "express": "^4.16.3",
+    "jest": "^23.1.0",
+    "serve-static": "^1.13.2"
   },
   "files": [
     "LICENSE",

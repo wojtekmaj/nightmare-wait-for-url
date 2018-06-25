@@ -18,13 +18,17 @@ Nightmare.action(
   },
   function waitForUrl(matchUrl, done) {
     const timeout = setTimeout(
-      () => done(new Error(`.waitForUrl(): timed out after ${this.options.waitTimeout}ms - could not find a matching url`)),
+      () => done(new Error(`.waitForUrl(): Timed out after ${this.options.waitTimeout}ms - could not find a matching url`)),
       this.options.waitTimeout,
     );
 
     // Our event handler
-    const handler = (latestUrl) => {
-      if (latestUrl.match(matchUrl)) {
+    const handler = (url) => {
+      if (!url) {
+        return;
+      }
+
+      if (url.match(matchUrl)) {
         this.child.removeListener('waitForUrl', handler);
 
         clearTimeout(timeout);
