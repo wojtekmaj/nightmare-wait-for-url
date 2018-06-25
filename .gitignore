@@ -1,3 +1,7 @@
+.cache
+.vscode
+dist
+coverage
 node_modules
-.idea
-.DS_Store
+npm-debug.log
+yarn-error.log
