@@ -21,7 +21,7 @@ var base = 'http://localhost:7500/';
 
 describe('Nightmare Wait For Url', function() {
     before(function(done) {
-        require('../nightmare-wait-for-url');
+        require('../src/nightmare-wait-for-url');
         server.listen(7501, function() {
             server.listen(7500, done);
         });

@@ -2,7 +2,7 @@
   "name": "nightmare-wait-for-url",
   "version": "0.0.2",
   "description": "Extends Nightmare with .waitForUrl() action.",
-  "main": "./nightmare-wait-for-url.js",
+  "main": "src/nightmare-wait-for-url.js",
   "scripts": {
     "test": "mocha test",
     "test-eslint": "eslint ./src"
@@ -40,7 +40,7 @@
   "files": [
     "LICENSE",
     "README.md",
-    "nightmare-wait-for-url.js"
+    "src/"
   ],
   "repository": {
     "type": "git",
