@@ -4,8 +4,9 @@
   "description": "Extends Nightmare with .waitForUrl() action.",
   "main": "src/nightmare-wait-for-url.js",
   "scripts": {
-    "test": "mocha test",
-    "test-eslint": "eslint ./src"
+    "test": "npm run test-eslint && npm run test-mocha",
+    "test-eslint": "eslint ./src",
+    "test-mocha": "mocha test"
   },
   "keywords": [
     "nightmare",
@@ -24,7 +25,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "debug": "^2.2.0",
     "nightmare": "^2.3.0 || ^3.0.0"
   },
   "devDependencies": {
