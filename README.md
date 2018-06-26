@@ -46,6 +46,15 @@ The MIT License.
 <table>
   <tr>
     <td>
+      <img src="https://github.com/Zn4rK.png?s=100" width="100">
+    </td>
+    <td>
+      Alexander Liljengård<br />
+      <a href="mailto:alexander@paxxmedia.se">alexander@paxxmedia.se</a><br />
+    </td>
+  </tr>
+  <tr>
+    <td>
       <img src="https://github.com/wojtekmaj.png?s=100" width="100">
     </td>
     <td>

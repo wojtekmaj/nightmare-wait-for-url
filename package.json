@@ -15,12 +15,16 @@
     "waitForUrl"
   ],
   "author": {
-    "name": "Wojciech Maj",
-    "email": "kontakt@wojtekmaj.pl"
+    "name": "Alexander Liljengård"
   },
   "contributors": [
     {
-      "name": "Alexander Liljengård"
+      "name": "Ben Styles",
+      "email": "enquiries@leeds-ebooks.co.uk"
+    },
+    {
+      "name": "Wojciech Maj",
+      "email": "kontakt@wojtekmaj.pl"
     }
   ],
   "license": "MIT",
