@@ -54,5 +54,27 @@ describe('Nightmare .waitForUrl', () => {
 
       await ngtm.end();
     });
+
+    it('should timeout if no match for #anchor1', async () => {
+      const ngtm = Nightmare({
+        waitTimeout: 1000,
+      });
+
+      let error;
+      try {
+        await ngtm
+          .goto(base)
+          .click('#anchor-1')
+          .waitForUrl('#anchor2');
+      } catch (err) {
+        error = err;
+      }
+
+      expect(error).toBeInstanceOf(Error);
+      expect(error.message).toBe('.waitForUrl(): Timed out after 1000ms - could not find a matching url');
+
+      await ngtm.end();
+    });
+  });
   });
 });
