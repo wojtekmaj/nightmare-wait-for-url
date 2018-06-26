@@ -28,7 +28,19 @@ Nightmare.action(
         return;
       }
 
-      if (url.match(matchUrl)) {
+      const urlMatches = () => {
+        if (matchUrl instanceof RegExp) {
+          return url.match(matchUrl);
+        }
+
+        if (typeof matchUrl === 'string') {
+          return url.includes(matchUrl);
+        }
+
+        return null;
+      };
+
+      if (urlMatches()) {
         this.child.removeListener('waitForUrl', handler);
 
         clearTimeout(timeout);
