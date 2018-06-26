@@ -3,7 +3,7 @@ import app from '../../test/app';
 
 import '../nightmare-wait-for-url';
 
-const url = 'http://127.0.0.1:7500/';
+const url = 'http://localhost:7500';
 
 describe('Nightmare .waitForUrl', () => {
   let server;
@@ -39,7 +39,7 @@ describe('Nightmare .waitForUrl', () => {
   });
 
   describe('waiting', () => {
-    it('should wait for #anchor1', async () => {
+    it('should wait for URL containing string', async () => {
       const ngtm = Nightmare();
 
       const anchorString = await ngtm
@@ -52,7 +52,20 @@ describe('Nightmare .waitForUrl', () => {
       await ngtm.end();
     });
 
-    it('should wait for #anchor\\d+ with regular expression', async () => {
+    it('should wait for URL containing string containing regex characters', async () => {
+      const ngtm = Nightmare();
+
+      const anchorString = await ngtm
+        .goto(url)
+        .click('#submit_button')
+        .waitForUrl(`${url}/?q=test`); // without ${url}, will match 'q=test', omitting '/?'
+
+      expect(anchorString).toBe(true);
+
+      await ngtm.end();
+    });
+
+    it('should wait for URL matching regular expression', async () => {
       const ngtm = Nightmare();
 
       const anchorRegExp = await ngtm
@@ -65,7 +78,7 @@ describe('Nightmare .waitForUrl', () => {
       await ngtm.end();
     });
 
-    it('should timeout if no match for #anchor1', async () => {
+    it('should timeout if no match', async () => {
       const ngtm = Nightmare({
         waitTimeout: 1000,
       });
