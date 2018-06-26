@@ -22,20 +22,51 @@ Add nigthmare-wait-for-url by executing `npm install nightmare-wait-for-url` or 
 Here's an example of basic usage:
 
 ```js
-require('nightmare-wait-for-url')
+const Nightmare = require('nightmare');
+require('nightmare-wait-for-url');
 
-const google = await nightmare
-  .goto('https://www.google.com')
-  .type('input[label="Search"]', 'Alexander the great')
-  .click('input[name="btnK"]')
-  .waitForUrl(/https:\/\/www\.google\.com\/.*q=Alexander\+the\+great/);
+const nightmare = Nightmare({ show: true })
+
+nightmare
+  .goto('https://duckduckgo.com/')
+  .type('#search_form_input_homepage', 'Alexander the great')
+  .click('#search_button_homepage')
+  .waitForUrl('https://duckduckgo.com/?q=Alexander+the+great');
 ```
 
 ### .waitForUrl(string)
-Waits for the navigation to match the provided string.
+
+Waits for the navigation to include the provided string.
+
+Example:
+
+```js
+nightmare
+  .goto('https://duckduckgo.com/')
+  .type('#search_form_input_homepage', 'Alexander the great')
+  .click('#search_button_homepage')
+  .waitForUrl('https://duckduckgo.com/?q=Alexander+the+great');
+```
 
 ### .waitForUrl(regex)
+
 Waits for the navigation to match the provided regular expression.
+
+Example:
+
+```js
+nightmare
+  .goto('https://duckduckgo.com/')
+  .type('#search_form_input_homepage', 'Alexander the great')
+  .click('#search_button_homepage')
+  .waitForUrl(/(Alexander|Hamster)\+the\+great/);
+```
+
+### waitTimeout
+
+Throws an exception if the `.waitForUrl()` didn't return true within the set timeframe.
+
+[More on waitTimeout](https://github.com/segmentio/nightmare#waittimeout-default-30s) in Nightmare's README.
 
 ## License
 
