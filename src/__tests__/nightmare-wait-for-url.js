@@ -1,16 +1,14 @@
-const Nightmare = require('nightmare');
-const app = require('../../test/app');
+import Nightmare from 'nightmare';
+import app from '../../test/app';
 
-// Get rid of a warning
-process.setMaxListeners(0);
+import '../nightmare-wait-for-url';
 
-const base = 'http://localhost:7500/';
+const url = 'http://127.0.0.1:7500/';
 
 describe('Nightmare .waitForUrl', () => {
   let server;
 
   beforeAll((done) => {
-    require('../nightmare-wait-for-url');
     server = app.listen(7500, done);
   });
 
@@ -32,7 +30,7 @@ describe('Nightmare .waitForUrl', () => {
     const ngtm = Nightmare();
 
     const constructNgtm = async () => ngtm
-      .goto(base)
+      .goto(url)
       .waitForUrl();
 
     expect(constructNgtm).not.toThrow();
@@ -45,7 +43,7 @@ describe('Nightmare .waitForUrl', () => {
       const ngtm = Nightmare();
 
       const anchorString = await ngtm
-        .goto(base)
+        .goto(url)
         .click('#anchor-1')
         .waitForUrl('#anchor1');
 
@@ -58,7 +56,7 @@ describe('Nightmare .waitForUrl', () => {
       const ngtm = Nightmare();
 
       const anchorRegExp = await ngtm
-        .goto(base)
+        .goto(url)
         .click('#anchor-1')
         .waitForUrl(/#anchor\d+/);
 
@@ -75,7 +73,7 @@ describe('Nightmare .waitForUrl', () => {
       let error;
       try {
         await ngtm
-          .goto(base)
+          .goto(url)
           .click('#anchor-1')
           .waitForUrl('#anchor2');
       } catch (err) {
@@ -94,7 +92,7 @@ describe('Nightmare .waitForUrl', () => {
       const ngtm = Nightmare();
 
       const anchorRegExp = await ngtm
-        .goto(base)
+        .goto(url)
         .click('#anchor-1')
         .waitForUrl('#anchor1')
         .waitForUrl(/#anchor\d+/);
@@ -107,14 +105,14 @@ describe('Nightmare .waitForUrl', () => {
     it('should handle two .waitForUrl with URL change', async () => {
       const ngtm = Nightmare();
 
-      const anchorRegExp = await ngtm
-        .goto(base)
+      const anchorString = await ngtm
+        .goto(url)
         .click('#anchor-1')
         .waitForUrl('#anchor1')
         .click('#anchor-2')
         .waitForUrl('#anchor2');
 
-      expect(anchorRegExp).toBe(true);
+      expect(anchorString).toBe(true);
 
       await ngtm.end();
     });
