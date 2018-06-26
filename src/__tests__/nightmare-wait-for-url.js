@@ -76,5 +76,35 @@ describe('Nightmare .waitForUrl', () => {
       await ngtm.end();
     });
   });
+
+  describe('chaining two or more actions', () => {
+    it('should handle two .waitForUrl without URL change', async () => {
+      const ngtm = Nightmare();
+
+      const anchorRegExp = await ngtm
+        .goto(base)
+        .click('#anchor-1')
+        .waitForUrl('#anchor1')
+        .waitForUrl(/#anchor\d+/);
+
+      expect(anchorRegExp).toBe(true);
+
+      await ngtm.end();
+    });
+
+    it('should handle two .waitForUrl with URL change', async () => {
+      const ngtm = Nightmare();
+
+      const anchorRegExp = await ngtm
+        .goto(base)
+        .click('#anchor-1')
+        .waitForUrl('#anchor1')
+        .click('#anchor-2')
+        .waitForUrl('#anchor2');
+
+      expect(anchorRegExp).toBe(true);
+
+      await ngtm.end();
+    });
   });
 });
