@@ -2,8 +2,10 @@
   "name": "nightmare-wait-for-url",
   "version": "0.0.2",
   "description": "Extends Nightmare with .waitForUrl() action.",
-  "main": "src/nightmare-wait-for-url.js",
+  "main": "dist/nightmare-wait-for-url.js",
+  "es6": "src/nightmare-wait-for-url.js",
   "scripts": {
+    "build": "babel src -d dist --ignore __tests__",
     "test": "npm run test-eslint && npm run test-jest",
     "test-eslint": "eslint ./src",
     "test-jest": "jest"
@@ -47,10 +49,14 @@
   "files": [
     "LICENSE",
     "README.md",
+    "dist/",
     "src/"
   ],
   "repository": {
     "type": "git",
     "url": "https://github.com/wojtekmaj/nightmare-wait-for-url"
+  },
+  "engines": {
+    "node": ">=4.0.0"
   }
 }
