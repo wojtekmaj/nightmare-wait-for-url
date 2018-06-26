@@ -21,7 +21,19 @@ describe('Nightmare .waitForUrl', () => {
   it('should be constructable', async () => {
     const ngtm = Nightmare();
 
-    const constructNgtm = async () => ngtm.waitForUrl('');
+    const constructNgtm = async () => ngtm.waitForUrl();
+
+    expect(constructNgtm).not.toThrow();
+
+    await ngtm.end();
+  });
+
+  it('should not throw an error when provided with no arguments', async () => {
+    const ngtm = Nightmare();
+
+    const constructNgtm = async () => ngtm
+      .goto(base)
+      .waitForUrl();
 
     expect(constructNgtm).not.toThrow();
 
