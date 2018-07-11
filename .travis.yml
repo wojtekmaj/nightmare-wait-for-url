@@ -1,6 +1,6 @@
 env:
   global:
-    - CC_TEST_REPORTER_ID=64257aade389b2a1c459b7e506ba6a61f0d80406cbe769c696814ca094abb04f
+    - CC_TEST_REPORTER_ID=3a1f7b8bb5a15f6cef89ea123b3825813e94c5f7aa9752f6f9083ab92bfb9637
 language: node_js
 node_js: "node"
 cache: yarn
