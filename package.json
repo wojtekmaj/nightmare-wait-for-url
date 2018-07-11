@@ -8,7 +8,8 @@
     "build": "babel src -d dist --ignore src/__tests__",
     "test": "yarn run test-eslint && yarn run test-jest",
     "test-eslint": "eslint ./src",
-    "test-jest": "jest"
+    "test-jest": "jest",
+    "test-jest-coverage": "jest --coverage"
   },
   "keywords": [
     "nightmare",
