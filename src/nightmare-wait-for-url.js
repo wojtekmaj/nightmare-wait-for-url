@@ -1,5 +1,17 @@
 const Nightmare = require('nightmare');
 
+const urlMatches = (url, matchUrl) => {
+  if (matchUrl instanceof RegExp) {
+    return url.match(matchUrl);
+  }
+
+  if (typeof matchUrl === 'string') {
+    return url.includes(matchUrl);
+  }
+
+  return null;
+};
+
 Nightmare.action(
   'waitForUrl',
   (ns, options, parent, win, renderer, done) => {
@@ -28,19 +40,7 @@ Nightmare.action(
         return;
       }
 
-      const urlMatches = () => {
-        if (matchUrl instanceof RegExp) {
-          return url.match(matchUrl);
-        }
-
-        if (typeof matchUrl === 'string') {
-          return url.includes(matchUrl);
-        }
-
-        return null;
-      };
-
-      if (urlMatches()) {
+      if (urlMatches(url, matchUrl)) {
         this.child.removeListener('waitForUrl', handler);
 
         clearTimeout(timeout);
