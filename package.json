@@ -1,6 +1,6 @@
 {
   "name": "nightmare-wait-for-url",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0",
   "description": "Extends Nightmare with .waitForUrl() action.",
   "main": "dist/nightmare-wait-for-url.js",
   "es6": "src/nightmare-wait-for-url.js",
