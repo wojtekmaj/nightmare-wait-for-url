@@ -19,9 +19,14 @@ describe('Nightmare .waitForUrl', () => {
   it('should be constructable', async () => {
     const ngtm = Nightmare();
 
-    const constructNgtm = async () => ngtm.waitForUrl();
+    let error;
+    try {
+      await ngtm.waitForUrl('');
+    } catch (err) {
+      error = err;
+    }
 
-    expect(constructNgtm).not.toThrow();
+    expect(error).toBeUndefined();
 
     await ngtm.end();
   });
@@ -29,11 +34,16 @@ describe('Nightmare .waitForUrl', () => {
   it('should not throw an error when provided with no arguments', async () => {
     const ngtm = Nightmare();
 
-    const constructNgtm = async () => ngtm
-      .goto(url)
-      .waitForUrl();
+    let error;
+    try {
+      await ngtm
+        .goto(url)
+        .waitForUrl();
+    } catch (err) {
+      error = err;
+    }
 
-    expect(constructNgtm).not.toThrow();
+    expect(error).toBeUndefined();
 
     await ngtm.end();
   });
