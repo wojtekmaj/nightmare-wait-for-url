@@ -5,6 +5,8 @@ import '../nightmare-wait-for-url';
 
 const url = 'http://localhost:7500';
 
+jest.setTimeout(25000);
+
 describe('Nightmare .waitForUrl', () => {
   let server;
 
