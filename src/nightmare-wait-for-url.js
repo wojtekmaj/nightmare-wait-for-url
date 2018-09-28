@@ -28,7 +28,15 @@ Nightmare.action(
 
     done();
   },
-  function waitForUrl(matchUrl, done) {
+  function waitForUrl(...args) {
+    const matchUrl = args[args.length - 2];
+    const done = args[args.length - 1];
+
+    if (!matchUrl) {
+      done();
+      return;
+    }
+
     const timeout = setTimeout(
       () => done(new Error(`.waitForUrl(): Timed out after ${this.options.waitTimeout}ms - could not find a matching url`)),
       this.options.waitTimeout,
