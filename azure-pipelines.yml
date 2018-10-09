@@ -7,7 +7,7 @@ pool:
   vmImage: 'win1803'
 
 steps:
-- script: yarn install
+- script: yarn
   displayName: 'Install dependencies'
 
 - script: yarn run test-eslint
@@ -15,3 +15,6 @@ steps:
 
 - script: yarn run test-jest
   displayName: 'Test: Jest'
+
+- script: yarn build
+  displayName: 'Build'
