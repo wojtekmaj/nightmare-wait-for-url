@@ -71,7 +71,7 @@ Throws an exception if the `.waitForUrl()` didn't return true within the set tim
 
 The MIT License.
 
-## Author
+## Authors
 
 <table>
   <tr>
