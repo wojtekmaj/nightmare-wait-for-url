@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/nightmare-wait-for-url.svg)](https://www.npmjs.com/package/nightmare-wait-for-url) ![downloads](https://img.shields.io/npm/dt/nightmare-wait-for-url.svg) ![dependencies](https://img.shields.io/david/wojtekmaj/nightmare-wait-for-url.svg
+[![npm](https://img.shields.io/npm/v/nightmare-wait-for-url.svg)](https://www.npmjs.com/package/nightmare-wait-for-url) ![downloads](https://img.shields.io/npm/dt/nightmare-wait-for-url.svg) [![CI](https://github.com/wojtekmaj/nightmare-wait-for-url/workflows/CI/badge.svg)](https://github.com/wojtekmaj/nightmare-wait-for-url/actions) ![dependencies](https://img.shields.io/david/wojtekmaj/nightmare-wait-for-url.svg
 ) ![dev dependencies](https://img.shields.io/david/dev/wojtekmaj/nightmare-wait-for-url.svg) [![Tested with Jest](https://img.shields.io/badge/tested_with-jest-99424f.svg)](https://github.com/facebook/jest)
 
 # nightmare-wait-for-url
