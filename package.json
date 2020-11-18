@@ -9,7 +9,7 @@
     "jest": "jest",
     "jest-coverage": "jest --coverage",
     "lint": "eslint src/ test/ --ext .jsx,.js",
-    "prepublishOnly": "yarn build",
+    "prepack": "yarn build",
     "test": "yarn lint && yarn jest"
   },
   "keywords": [
